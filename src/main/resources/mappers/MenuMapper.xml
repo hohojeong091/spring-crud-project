@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springcrudproject.crud.menu.model.dao.MenuMapper">
+
+    <select id="showAllBooks" resultType="com.example.springcrudproject.crud.menu.model.dto.BookDTO">
+        SELECT
+            bookId,
+            bookName,
+            autourName,
+            pubName,
+            catNum,
+            ability
+        FROM
+            bookinfo
+        ORDER BY
+            bookId
+    </select>
+
+    <insert id ="insertBook">
+        INSERT INTO
+            bookinfo
+        VALUES
+            ( #{bookId}, #{bookName}, #{autourName}, #{pubName}, #{catNum}, #{ability})
+
+    </insert>
+
+
+
+</mapper>
